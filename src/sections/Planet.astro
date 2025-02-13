@@ -1,0 +1,12 @@
+---
+const { color, shadow, place, size } = Astro.props
+---
+
+<div
+  class={`absolute rounded-full blur-sm overflow-hidden ${color} ${shadow} ${place} ${size}`}
+>
+  <div
+    class='absolute inset-0 bg-[radial-gradient(circle,rgba(0,0,0,0.4) 20%,transparent 70%)] rounded-full overflow-hidden'
+  >
+  </div>
+</div>

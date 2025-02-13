@@ -1,0 +1,27 @@
+---
+import HeroLogo from '@/components/HeroLogo.astro'
+import Star from '../icons/Star.astro'
+---
+
+<section class='flex flex-col items-center justify-center py-24 w-full h-auto'>
+  <h1
+    class='mb-9 px-2 py-1 text-5xl text-center font-extrabold text-gray-200 md:text-6xl lg:text-7xl'
+  >
+    <span
+      class='text-transparent bg-clip-text bg-gradient-to-l from-red-400 to-orange-400'
+      >DragonBall
+    </span> Wiki
+    <span
+      class='absolute shadow-md animate-[ping_1s_ease-in-out_infinite] backdrop-blur-md inline-flex gap-x-2 items-center justify-center mx-4 bg-gradient-to-r from-yellow-400 to-orange-400 size-16 rounded-full'
+    >
+      <Star class='text-orange-500 size-4' />
+    </span>
+    <span
+      class='absolute shadow-md backdrop-blur-md inline-flex gap-x-2 items-center justify-center mx-4 bg-gradient-to-r from-yellow-400 to-orange-400 size-16 rounded-full'
+    >
+      <Star class='text-orange-500 size-4' />
+    </span>
+  </h1>
+
+  <HeroLogo />
+</section>

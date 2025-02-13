@@ -1,0 +1,41 @@
+---
+import SocialPill from '@/components/SocialPill.astro'
+import GitHubIcon from '@/icons/GitHub.astro'
+const currentYear = new Date().getFullYear()
+---
+
+<footer
+  class='w-full h-auto mx-auto shadow-lg bg-neutral-400/5 backdrop-blur-sm mt-20'
+>
+  <div
+    class='mx-auto p-4 flex flex-wrap flex-col justify-center items-center sm:flex-row sm:justify-between'
+  >
+    <span class='text-sm text-gray-400 sm:text-center'>
+      Creado por <SocialPill
+        href='https://github.com/BrayanRamirezB'
+        class='text-orange-500 hover:underline'
+      >
+        BrayanRB</SocialPill
+      > con 💖 en <span class='font-bold'>{currentYear}</span>. Utilizando <SocialPill
+        href='https://web.dragonball-api.com/'
+        class='text-orange-500 hover:underline'>DragonBall API.</SocialPill
+      >
+    </span>
+
+    <div
+      class='flex items-center mt-3 text-sm space-x-4 font-medium text-gray-400 sm:mt-0'
+    >
+      <a href='/' class='hover:underline'> Inicio </a>
+      <a href='mailto:brbrayan1945@gmail.com' class='hover:underline'>
+        Contacto
+      </a>
+      <SocialPill
+        href='https://github.com/BrayanRamirezB/dragonball-wiki'
+        class='flex items-center justify-center gap-x-1 transition hover:underline'
+      >
+        <GitHubIcon class='size-5' />
+        <SocialPill />
+      </SocialPill>
+    </div>
+  </div>
+</footer>
