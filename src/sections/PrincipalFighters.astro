@@ -1,0 +1,66 @@
+---
+import Fighter from '@/components/Fighter.astro'
+const response = await fetch(
+  'https://dragonball-api.com/api/characters?affiliation=Z Fighter'
+)
+const fighters: Fighter[] = await response.json()
+const leftFighters = fighters.slice(0, fighters.length / 2)
+const rightFighters = fighters.slice(fighters.length / 2, fighters.length)
+---
+
+<section class='py-24'>
+  <div class='flex flex-col justify-center items-center text-center gap-y-4'>
+    <h2 class='text-xl md:text-2xl lg:text-3xl font-bold text-neutral-200'>
+      Guerreros Z de DragonBall
+    </h2>
+    <span
+      class='text-center text-md lg:text-lg max-w-xl font-bold text-neutral-400'
+      >Conoce los detalles de los personajes principales de DragonBall Z.</span
+    >
+  </div>
+
+  <div
+    class='mt-10 flex flex-col lg:flex-row justify-center items-center gap-8'
+  >
+    <div
+      class='mt-12 flex flex-row flex-wrap justify-center items-center lg:grid lg:grid-cols-2 gap-4'
+    >
+      {
+        leftFighters.map(({ id, name, image }) => (
+          <Fighter id={id} name={name} image={image} />
+        ))
+      }
+    </div>
+
+    <div class='flex flex-col items-center justify-center gap-y-4'>
+      <a
+        href='/'
+        class='w-96 h-0 md:h-96 lg:h-[600px] flex flex-col justify-center items-center gap-2 transition-transform duration-300 hover:scale-110'
+      >
+        <img
+          id='fighter-preview'
+          src={fighters[0]?.image}
+          alt='Peleador seleccionado'
+          class='h-full w-auto object-cover transition-all duration-300'
+        />
+
+        <span
+          id='fighter-name'
+          class='flex text-center text-5xl -skew-6 font-bold text-orange-500 transition-all duration-300 uppercase'
+        >
+          {fighters[0]?.name}
+        </span>
+      </a>
+    </div>
+
+    <div
+      class='mt-12 flex flex-row flex-wrap justify-center items-center lg:grid lg:grid-cols-2 gap-4'
+    >
+      {
+        rightFighters.map(({ id, name, image }) => (
+          <Fighter id={id} name={name} image={image} />
+        ))
+      }
+    </div>
+  </div>
+</section>

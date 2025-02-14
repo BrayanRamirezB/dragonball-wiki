@@ -1,11 +1,14 @@
 ---
 import HeroLogo from '@/components/HeroLogo.astro'
 import Star from '../icons/Star.astro'
+import PrincipalInfo from '@/sections/PrincipalInfo.astro'
 ---
 
-<section class='flex flex-col items-center justify-center py-24 w-full h-auto'>
+<section
+  class='flex flex-col items-center justify-center py-24 w-full h-screen'
+>
   <h1
-    class='mb-9 px-2 py-1 text-5xl text-center font-extrabold text-gray-200 md:text-6xl lg:text-7xl'
+    class='mb-9 px-2 py-1 text-center font-extrabold text-gray-200 text-6xl lg:text-7xl cursor-default transition-transform duration-500 ease-in-out hover:scale-110'
   >
     <span
       class='text-transparent bg-clip-text bg-gradient-to-l from-red-400 to-orange-400'
@@ -24,4 +27,6 @@ import Star from '../icons/Star.astro'
   </h1>
 
   <HeroLogo />
+
+  <PrincipalInfo />
 </section>

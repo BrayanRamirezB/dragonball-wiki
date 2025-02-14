@@ -1,42 +1,27 @@
-<section class='flex flex-col font-medium text-gray-400 my-24 gap-y-10'>
-  <div class='flex justify-center items-center'>
-    <a
-      href='https://web.dragonball-api.com/'
-      target='_blank'
-      rel='noopener noreferrer'
-      class='hover:scale-125 hover:opacity-70 transition inline-block'
-    >
-      <img
-        src='https://web.dragonball-api.com/images-compress/logo_dragonballapi.webp'
-        alt='DragonBall API'
-        width='200'
-        height='200'
-      />
-    </a>
-  </div>
+<section class='flex flex-col font-medium text-neutral-300 my-24 gap-y-10'>
   <div
-    class='grid [grid-template-columns:1fr] md:[grid-template-columns:1fr_1.5fr_1fr] text-center gap-x-10'
+    class='grid [grid-template-columns:1fr] lg:[grid-template-columns:1fr_1.5fr_1fr] text-center gap-x-10'
   >
     <article
-      class='order-2 md:order-1 flex justify-center items-center text-xl py-10 md:py-12 lg:py-20 px-10 md:border-y-2 border-gray-800'
+      class='order-2 lg:order-1 flex justify-center items-center text-xl py-10 px-10 cursor-default transition duration-300 hover:scale-110 backdrop-blur-sm rounded-lg bg-linear-to-b from-neutral-400/20 via-neutral-400/5 to-transparent'
     >
       <h5 class='w-56 text-center'>Personajes, imagenes y transformaciones.</h5>
     </article>
-    <article
-      class='order-1 md:order-2 flex justify-center items-center text-2xl py-10 md:py-12 lg:py-20 px-10 border-y-2 border-gray-800'
+    <a
+      class='order-1 gap-y-4 lg:order-2 flex flex-col justify-center items-center text-2xl py-10 px-10 hover:text-red-500 transition duration-300 hover:scale-110 backdrop-blur-sm rounded-lg bg-linear-to-b from-neutral-400/20 via-neutral-400/5 to-transparen'
+      href='https://web.dragonball-api.com/'
+      target='_blank'
+      rel='noopener noreferrer'
     >
-      <h4>
-        <a
-          class='hover:text-red-500 transition hover:scale-110 inline-block'
-          href='https://web.dragonball-api.com/'
-          target='_blank'
-          rel='noopener noreferrer'
-          >Elaborado utilizando DragonBall API.
-        </a>
-      </h4>
-    </article>
+      <h4>Elaborado utilizando DragonBall API.</h4>
+      <img
+        src='https://web.dragonball-api.com/images-compress/logo_dragonballapi.webp'
+        alt='DragonBall API'
+        class='h-18 md:h-16 lg:h-18 object-cover'
+      />
+    </a>
     <article
-      class='order-3 flex justify-center items-center text-xl py-10 md:py-12 lg:py-20 px-10 border-y-2 border-gray-800'
+      class='order-3 flex justify-center items-center text-xl py-10 px-10 cursor-default transition duration-300 hover:scale-110 backdrop-blur-sm rounded-lg bg-linear-to-b from-neutral-400/20 via-neutral-400/5 to-transparen'
     >
       <h5>Incluye personajes oficiales de DragonBall.</h5>
     </article>
