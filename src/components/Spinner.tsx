@@ -53,12 +53,12 @@ const Spinner: React.FC<SpinnerProps> = ({
   }
 
   const textColors = {
-    default: 'text-gray-800 dark:text-gray-300',
-    primary: 'text-blue-800 dark:text-blue-600',
-    secondary: 'text-indigo-800 dark:text-indigo-600',
-    success: 'text-green-800 dark:text-green-600',
-    warning: 'text-yellow-800 dark:text-yellow-600',
-    danger: 'text-red-800 dark:text-red-500'
+    default: 'text-gray-300',
+    primary: 'text-blue-600',
+    secondary: 'text-indigo-600',
+    success: 'text-green-600',
+    warning: 'text-yellow-600',
+    danger: 'text-red-500'
   }
 
   return (

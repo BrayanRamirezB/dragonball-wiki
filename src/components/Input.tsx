@@ -54,21 +54,21 @@ const Input: React.FC<InputProps> = ({
   }
 
   const colors = {
-    default: 'bg-neutral-100/20 dark:bg-zinc-700/30 dark:shadow-zinc-700/10',
+    default: 'bg-zinc-700/30 shadow-zinc-700/10',
     primary: 'bg-blue-500/20',
     secondary: 'bg-indigo-500/20',
     success: 'bg-green-500/30',
-    warning: 'bg-yellow-500/40 dark:bg-yellow-500/20',
+    warning: 'bg-yellow-500/20',
     danger: 'bg-red-500/20'
   }
 
   const textColors = {
-    default: 'text-gray-800 dark:text-gray-300',
-    primary: 'text-blue-800 dark:text-blue-500',
-    secondary: 'text-indigo-800 dark:text-indigo-500',
-    success: 'text-green-800 dark:text-green-500',
-    warning: 'text-yellow-800 dark:text-yellow-500',
-    danger: 'text-red-800 dark:text-red-500'
+    default: 'text-gray-300',
+    primary: 'text-blue-500',
+    secondary: 'text-indigo-500',
+    success: 'text-green-500',
+    warning: 'text-yellow-500',
+    danger: 'text-red-500'
   }
 
   const borderColors = {
@@ -95,7 +95,7 @@ const Input: React.FC<InputProps> = ({
   }
 
   return (
-    <div className={`flex flex-col space-y-2 ${textColors[color]}`}>
+    <div className={`flex flex-col space-2 ${textColors[color]}`}>
       {/* Label */}
       {label && (
         <label className='text-sm font-medium'>
