@@ -17,7 +17,7 @@ const FighterZ = ({ character }: CharacterProps) => {
     ) as HTMLElement | null
 
     if (previewElement && nameElement && linkElement) {
-      linkElement.href = `/characters/${character.id}`
+      linkElement.href = `/fighters/${character.id}`
       previewElement.src = character.image
       nameElement.innerText = character.name
     }
