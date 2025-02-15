@@ -6,7 +6,7 @@ interface CharacterProps {
 
 const Character = ({ character }: CharacterProps) => (
   <a
-    href={`/`}
+    href={`/fighters/${character.id}`}
     title={`Character ${character.name}`}
     className='group relative flex flex-col items-center justify-center text-center h-32 w-24 lg:w-30 xl:32 transition duration-300 hover:scale-110 backdrop-blur-sm rounded-lg bg-linear-to-b from-neutral-400/20 hover:from-red-500/30 via-neutral-400/10 hover:via-red-400/5 to-transparent'
   >

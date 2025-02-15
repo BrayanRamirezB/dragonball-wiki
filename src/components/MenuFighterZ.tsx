@@ -43,11 +43,13 @@ const MenuFighterZ = () => {
 
       <div className='flex flex-col items-center justify-center gap-y-4'>
         <a
-          href='/'
+          id='fighter-preview-link'
+          href={`/fighters/${fighters[0]?.id}`}
           className='w-96 h-0 md:h-96 lg:h-[600px] flex flex-col justify-center items-center gap-2 transition-transform duration-300 hover:scale-110'
         >
           <img
             id='fighter-preview'
+            style={{ viewTransitionName: 'fighter' } as React.CSSProperties}
             src={fighters[0]?.image}
             alt='Peleador seleccionado'
             className='h-full w-auto object-cover transition-all duration-300'

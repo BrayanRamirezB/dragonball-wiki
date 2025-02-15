@@ -1,0 +1,24 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { type AllFighters } from '@/const/Fighter'
+import FighterCard from '@/components/FighterCard'
+
+export async function getStaticPaths() {
+  const data: AllFighters = await fetch(
+    'https://dragonball-api.com/api/characters?limit=58'
+  ).then((res) => res.json())
+
+  return data.items.map((fighter) => ({
+    params: { id: fighter.id },
+    props: { fighter: fighter }
+  }))
+}
+
+const { fighter } = Astro.props
+---
+
+<Layout>
+  <main class='max-w-6xl px-2 lg:px-10 mx-auto mt-24 min-h-[calc(100vh-150px)]'>
+    <FighterCard fighter={fighter} />
+  </main>
+</Layout>
