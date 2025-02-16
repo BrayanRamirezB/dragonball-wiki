@@ -1,7 +1,6 @@
 ---
 import '@fontsource-variable/onest'
 import '@/styles/global.css'
-import Header from '@/sections/Header.astro'
 import Footer from '@/sections/Footer.astro'
 import Background from '@/sections/Background.astro'
 import { ClientRouter } from 'astro:transitions'
@@ -22,7 +21,6 @@ import { ClientRouter } from 'astro:transitions'
   </head>
   <body class='relative'>
     <Background />
-    <Header />
     <slot />
     <Footer />
   </body>

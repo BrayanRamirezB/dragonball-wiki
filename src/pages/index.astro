@@ -5,10 +5,17 @@ import Info from '@/sections/Info.astro'
 import Promo from '@/sections/PromoMictlan.astro'
 import PrincipalFighters from '@/sections/PrincipalFighters.astro'
 import Characters from '@/sections/Characters.astro'
+import Header from '@/sections/Header.astro'
 ---
 
 <Layout>
-  <main class='max-w-6xl px-2 lg:px-10 mx-auto mt-14'>
+  <Header
+    firstAnchorHref='#principal-fighters'
+    firstAnchorText='Guerreros Z'
+    secondAnchorHref='#characters'
+    secondAnchorText='Personajes'
+  />
+  <main class='max-w-6xl px-2 lg:px-10 mx-auto mt-18 md:mt-14'>
     <Hero />
     <Info />
     <PrincipalFighters />

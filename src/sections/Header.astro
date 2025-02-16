@@ -1,38 +1,35 @@
+---
+const { firstAnchorHref, firstAnchorText, secondAnchorHref, secondAnchorText } =
+  Astro.props
+---
+
 <header
   class='fixed top-0 z-10 w-full mx-auto shadow-xl shadow-neutral-100/10 backdrop-blur-sm bg-neutral-400/10 text-gray-300'
 >
   <nav
-    class='max-w-screen-3xl flex flex-wrap items-center md:justify-between justify-center mx-auto py-4'
+    class='max-w-screen-3xl flex flex-col md:flex-row items-center justify-center text-base md:text-lg font-medium mx-auto py-3 px-6 gap-x-10 gap-y-3'
   >
-    <div class='flex items-center px-6'>
+    <a
+      href={firstAnchorHref}
+      class='order-1 flex items-center justify-center transition duration-300 hover:text-red-400 md:hover:border-y-2 hover:scale-110'
+    >
+      {firstAnchorText}
+    </a>
+    <div
+      class='order-3 md:order-2 flex justify-center items-center px-6 transition-all duration-300 hover:scale-110'
+    >
       <a href='/' class='flex items-center'>
-        <img src='/favicon.webp' class='h-8' alt='DBWiki Logo' />
         <span
           class='self-center text-2xl font-bold whitespace-nowrap transition-colors duration-300 hover:text-red-400'
           >DragonBall Wiki</span
         >
       </a>
     </div>
-    <div
-      class='flex
-          items-center
-          px-6
-          text-base
-          font-medium
-          space-x-5'
+    <a
+      href={secondAnchorHref}
+      class='order-2 md:order-3 flex items-center justify-center transition duration-300 hover:text-red-400 md:hover:border-y-2 hover:scale-110'
     >
-      <a
-        href='/'
-        class='flex items-center justify-center gap-x-1 transition duration-300 hover:text-red-400'
-      >
-        Inicio
-      </a>
-      <a
-        href='/'
-        class='flex items-center justify-center gap-x-1 transition duration-300 hover:text-red-400'
-      >
-        Personajes
-      </a>
-    </div>
+      {secondAnchorText}
+    </a>
   </nav>
 </header>

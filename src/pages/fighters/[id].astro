@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro'
 import { type AllFighters } from '@/const/Fighter'
 import FighterCard from '@/components/FighterCard'
+import Header from '@/sections/Header.astro'
 
 export async function getStaticPaths() {
   const data: AllFighters = await fetch(
@@ -18,7 +19,15 @@ const { fighter } = Astro.props
 ---
 
 <Layout>
-  <main class='max-w-6xl px-2 lg:px-10 mx-auto mt-24 min-h-[calc(100vh-150px)]'>
+  <Header
+    firstAnchorHref='/#principal-fighters'
+    firstAnchorText='Guerreros Z'
+    secondAnchorHref='/#characters'
+    secondAnchorText='Personajes'
+  />
+  <main
+    class='max-w-6xl px-2 lg:px-10 mx-auto mt-40 md:mt-24 min-h-[calc(100vh-150px)]'
+  >
     <FighterCard fighter={fighter} />
   </main>
 </Layout>
