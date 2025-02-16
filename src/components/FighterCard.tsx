@@ -148,12 +148,12 @@ const FighterCard: React.FC<FighterCardProps> = ({ fighter }) => {
       </div>
 
       <div className='flex flex-col items-center justify-center gap-y-2 text-neutral-100/80 max-w-md sm:max-w-xl lg:max-w-3xl cursor-default'>
-        <div className='flex w-full flex-col gap-y-2 text-pretty text-base bg-indigo-500/5 backdrop-blur-sm shadow-md shadow-indigo-600/20 border border-indigo-500/20 rounded-xl py-2 px-4 transition-colors duration-300 ease-in-out hover:bg-indigo-500/10'>
+        <div className='flex w-full flex-col gap-y-2 text-pretty text-base bg-linear-to-b from-neutral-400/20 via-neutral-400/5 to-transparent backdrop-blur-sm shadow-md shadow-neutral-600/20 border border-neutral-500/20 rounded-xl py-2 px-4 transition-colors duration-300 ease-in-out hover:from-neutral-500/50 hover:via-neutral-500/20'>
           <h1 className='font-bold text-xl text-center'>Descripción</h1>
           <p className='text-neutral-100/70'>{fighter.description}</p>
         </div>
         <div className='grid grid-cols-[1fr_2fr] gap-x-2'>
-          <div className='flex items-center justify-center backdrop-blur-sm bg-indigo-500/5 shadow-md shadow-indigo-600/20 border border-indigo-500/20 rounded-xl py-2 px-4 transition-colors duration-300 ease-in-out hover:bg-indigo-500/10'>
+          <div className='flex items-center justify-center backdrop-blur-sm bg-linear-to-b from-neutral-400/20 via-neutral-400/5 to-transparent shadow-md shadow-neutral-600/20 border border-neutral-500/20 rounded-xl py-2 px-4 transition-colors duration-300 ease-in-out hover:from-neutral-500/50 hover:via-neutral-500/20'>
             <img
               src={fighter.originPlanet.image}
               alt={fighter.originPlanet.name}
@@ -161,12 +161,12 @@ const FighterCard: React.FC<FighterCardProps> = ({ fighter }) => {
             />
           </div>
           <div className='grid grid-rows-[1fr_4fr] gap-y-2'>
-            <div className='flex items-center justify-center backdrop-blur-sm bg-indigo-500/5 shadow-md shadow-indigo-600/20 border border-indigo-500/20 rounded-xl py-2 px-4 transition-colors duration-300 ease-in-out hover:bg-indigo-500/10'>
+            <div className='flex items-center justify-center backdrop-blur-sm bg-linear-to-b from-neutral-400/20 via-neutral-400/5 to-transparent shadow-md shadow-neutral-600/20 border border-neutral-500/20 rounded-xl py-2 px-4 transition-colors duration-300 ease-in-out hover:from-neutral-500/50 hover:via-neutral-500/20'>
               <h1 className='font-bold text-xl'>
                 Planeta {fighter.originPlanet.name}
               </h1>
             </div>
-            <div className='flex flex-col gap-y-2 backdrop-blur-sm bg-indigo-500/5 shadow-md shadow-indigo-600/20 border border-indigo-500/20 rounded-xl py-2 px-4 transition-colors duration-300 ease-in-out hover:bg-indigo-500/10'>
+            <div className='flex flex-col gap-y-2 backdrop-blur-sm bg-linear-to-b from-neutral-400/20 via-neutral-400/5 to-transparent shadow-md shadow-neutral-600/20 border border-neutral-500/20 rounded-xl py-2 px-4 transition-colors duration-300 ease-in-out hover:from-neutral-500/50 hover:via-neutral-500/20'>
               <h1 className='font-bold text-lg text-center'>
                 Descripción del planeta
               </h1>
