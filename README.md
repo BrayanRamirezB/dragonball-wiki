@@ -1,48 +1,51 @@
-# Astro Starter Kit: Basics
+# Wiki de Personajes de Dragon Ball
 
-```sh
-npm create astro@latest -- --template basics
-```
+¡Bienvenido a la **Wiki de Personajes de Dragon Ball**! Este proyecto es una completa enciclopedia en línea que recopila información detallada de **58 personajes icónicos** de las sagas de **Dragon Ball Z**, **Dragon Ball GT**, **Dragon Ball Super** y más. Desarrollada desde cero con tecnologías modernas, esta wiki ofrece una experiencia rápida, responsive y llena de detalles para los fans de Dragon Ball.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+---
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Características principales
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- **58 personajes detallados**: Perfiles completos con transformaciones, curiosidades y más.
+- **Tecnologías modernas**:
+  - **Astro 5**: Para un rendimiento ultrarrápido y una carga optimizada.
+  - **Tailwind CSS 4**: Para un diseño responsive y elegante.
+  - **TypeScript**: Para una experiencia de usuario fluida y sin errores.
+- **Integración con Dragonball API**: Todos los datos de los personajes son obtenidos de la [Dragonball API](https://web.dragonball-api.com/), asegurando información precisa y actualizada.
+- **Diseño con MictlanUI**: Utilizé el sistema de diseño [MictlanUI](https://mictlanuidev.netlify.app/) para crear una interfaz de usuario moderna y consistente.
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## Enlace a la Wiki
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Puedes visitar la Wiki de Personajes de Dragon Ball en el siguiente enlace:  
+👉 [Dragon Ball Wiki](https://dragonball-wiki-dev.netlify.app/)
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+---
 
-## 🧞 Commands
+## Tecnologías utilizadas
 
-All commands are run from the root of the project, from a terminal:
+- **Astro 5**: Framework moderno para construir sitios estáticos rápidos.
+- **Tailwind CSS 4**: Framework de utilidades CSS para un diseño rápido y personalizable.
+- **TypeScript**: Lenguaje que añade tipos estáticos a JavaScript para mayor robustez.
+- **Dragonball API**: Fuente de datos para obtener información detallada de los personajes.
+- **MictlanUI**: Sistema de diseño para crear interfaces de usuario modernas y consistentes.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+---
 
-## 👀 Want to learn more?
+## ¿Cómo contribuir?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Si deseas contribuir a este proyecto Puedes:
+1. Reportar errores o sugerencias en la sección de **Issues**.
+2. Hacer un **fork** del repositorio y enviar un **Pull Request** con tus mejoras.
+
+---
+
+## Créditos
+
+- **Dragonball API**: [https://web.dragonball-api.com/](https://web.dragonball-api.com/)
+- **MictlanUI**: [https://mictlanuidev.netlify.app/](https://mictlanuidev.netlify.app/)
+
+---
+
+¡Gracias por visitar la Wiki de Personajes de Dragon Ball! Espero que disfrutes explorando el universo de Dragon Ball tanto como yo disfruté creando esta plataforma. 🐉✨
