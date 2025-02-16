@@ -5,21 +5,33 @@ import FighterCard from '@/components/FighterCard'
 import Header from '@/sections/Header.astro'
 
 export async function getStaticPaths() {
-  const data: AllFighters = await fetch(
-    'https://dragonball-api.com/api/characters?limit=58'
-  ).then((res) => res.json())
+  try {
+    const data: AllFighters = await fetch(
+      'https://dragonball-api.com/api/characters?limit=58'
+    ).then((res) => {
+      if (!res.ok) {
+        throw new Error('Network response was not ok')
+      }
+      return res.json()
+    })
 
-  return data.items.map((fighter) => ({
-    params: { id: fighter.id },
-    props: { fighter: fighter }
-  }))
+    return data.items.map((fighter) => ({
+      params: { id: fighter.id },
+      props: { fighter: fighter }
+    }))
+  } catch (error) {
+    console.error('Error fetching fighters:', error)
+    return [] // Retorna un array vacío en caso de error
+  }
 }
 
 const { id } = Astro.params
 
 const fighter: Fighter = await fetch(
   `https://dragonball-api.com/api/characters/${id}`
-).then((res) => res.json())
+)
+  .then((res) => res.json())
+  .catch(() => null)
 ---
 
 <Layout>
@@ -30,8 +42,23 @@ const fighter: Fighter = await fetch(
     secondAnchorText='Personajes'
   />
   <main
-    class='max-w-6xl px-2 lg:px-10 mx-auto mt-40 md:mt-24 min-h-[calc(100vh-150px)]'
+    class='max-w-6xl px-2 lg:px-10 mx-auto mt-40 md:mt-24 mb-4 min-h-[calc(100vh-150px)]'
   >
-    <FighterCard fighter={fighter} />
+    {
+      fighter ? (
+        <FighterCard fighter={fighter} client:load />
+      ) : (
+        <div class='flex flex-col items-center justify-center gap-y-6'>
+          <h1 class='text-gray-300 text-6xl font-bold'>
+            Error al cargar la página
+          </h1>
+          <img
+            src='/404.webp'
+            alt='Error al cargar la página'
+            class='h-80 rounded-full'
+          />
+        </div>
+      )
+    }
   </main>
 </Layout>
