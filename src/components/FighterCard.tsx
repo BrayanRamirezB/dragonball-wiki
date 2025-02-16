@@ -152,15 +152,15 @@ const FighterCard: React.FC<FighterCardProps> = ({ fighter }) => {
           <h1 className='font-bold text-xl text-center'>Descripción</h1>
           <p className='text-neutral-100/70'>{fighter.description}</p>
         </div>
-        <div className='grid grid-cols-[1fr_2fr] gap-x-2'>
-          <div className='flex items-center justify-center backdrop-blur-sm bg-linear-to-b from-neutral-400/20 via-neutral-400/5 to-transparent shadow-md shadow-neutral-600/20 border border-neutral-500/20 rounded-xl py-2 px-4 transition-colors duration-300 ease-in-out hover:from-neutral-500/50 hover:via-neutral-500/20'>
+        <div className='grid grid-rows-1 md:grid-cols-[1fr_1fr] gap-2'>
+          <div className='order-2 md:order-none flex items-center justify-center backdrop-blur-sm bg-linear-to-b from-neutral-400/20 via-neutral-400/5 to-transparent shadow-md shadow-neutral-600/20 border border-neutral-500/20 rounded-xl py-2 px-4 transition-colors duration-300 ease-in-out hover:from-neutral-500/50 hover:via-neutral-500/20'>
             <img
               src={fighter.originPlanet.image}
               alt={fighter.originPlanet.name}
               className='h-60 object-cover rounded-full overflow-hidden'
             />
           </div>
-          <div className='grid grid-rows-[1fr_4fr] gap-y-2'>
+          <div className='order-1 md:order-none grid grid-rows-[1fr_4fr] gap-y-2'>
             <div className='flex items-center justify-center backdrop-blur-sm bg-linear-to-b from-neutral-400/20 via-neutral-400/5 to-transparent shadow-md shadow-neutral-600/20 border border-neutral-500/20 rounded-xl py-2 px-4 transition-colors duration-300 ease-in-out hover:from-neutral-500/50 hover:via-neutral-500/20'>
               <h1 className='font-bold text-xl'>
                 Planeta {fighter.originPlanet.name}

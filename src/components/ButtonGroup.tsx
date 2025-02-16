@@ -24,7 +24,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
   disabled = false
 }) => {
   const variants = {
-    default: 'border-0 shadow-md backdrop-blur-sm',
+    default: 'border-0 md:shadow-md backdrop-blur-sm',
     bordered: 'border border-current',
     light: ''
   }
@@ -121,7 +121,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
 
   return (
     <div
-      className={`inline-flex overflow-hidden ${
+      className={`inline-flex flex-row flex-wrap md:flex-nowrap shadow-none items-center justify-center w-full  ${
         variant === 'default' && shadowColors[color]
       } ${roundeds[rounded]}`}
       role='group'
