@@ -1,6 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import { type AllFighters } from '@/const/Fighter'
+import { type AllFighters, type Fighter } from '@/const/Fighter'
 import FighterCard from '@/components/FighterCard'
 import Header from '@/sections/Header.astro'
 
@@ -15,7 +15,11 @@ export async function getStaticPaths() {
   }))
 }
 
-const { fighter } = Astro.props
+const { id } = Astro.params
+
+const fighter: Fighter = await fetch(
+  `https://dragonball-api.com/api/characters/${id}`
+).then((res) => res.json())
 ---
 
 <Layout>

@@ -17,26 +17,6 @@ const FighterCard: React.FC<FighterCardProps> = ({ fighter }) => {
   )
   const nextFighter = useMemo(() => getNextFighter(fighter.id), [fighter.id])
 
-  const affiliationColors: {
-    [key: string]:
-      | 'default'
-      | 'primary'
-      | 'secondary'
-      | 'success'
-      | 'warning'
-      | 'danger'
-      | undefined
-  } = {
-    'Z Fighter': 'warning',
-    'Army of Frieza': 'secondary',
-    Freelancer: 'success',
-    Other: 'default',
-    Villain: 'danger',
-    'Assistant of Vermoud': 'primary',
-    'Pride Troopers': 'danger',
-    'Assistant of Beerus': 'primary'
-  }
-
   const gradientBackground: { [key: string]: string } = {
     Human: 'bg-gradient-to-r from-blue-300/40 to-blue-600/40',
     Saiyan: 'bg-gradient-to-r from-yellow-400/40 to-red-600/40',
