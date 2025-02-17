@@ -46,7 +46,7 @@ const fighter: Fighter = await fetch(
   >
     {
       fighter ? (
-        <FighterCard fighter={fighter} client:load />
+        <FighterCard fighter={fighter} client:only='react' />
       ) : (
         <div class='flex flex-col items-center justify-center gap-y-6'>
           <h1 class='text-gray-300 text-6xl font-bold'>

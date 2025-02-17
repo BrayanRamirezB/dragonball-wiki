@@ -3,9 +3,11 @@ import { type Fighter, type Transformation } from '@/const/Fighter'
 import { getPreviousFighter, getNextFighter } from '@/const/SpecialClases'
 import Card from '@/components/Card'
 import CardContent from '@/components/CardContent'
-import FighterLink from './FighterLink'
-import Radar from './Radar'
+import FighterLink from '@/components/FighterLink'
+import Radar from '@/components/Radar'
 import ButtonGroup from '@/components/ButtonGroup'
+import SwipeEffect from '@/components/SwipeEffect'
+import Alert from '@/components/Alert'
 
 interface FighterCardProps {
   fighter: Fighter
@@ -75,6 +77,14 @@ const FighterCard: React.FC<FighterCardProps> = ({ fighter }) => {
 
   return (
     <section className='flex flex-col justify-center items-center gap-4'>
+      <div className='max-w-3xl'>
+        <Alert
+          title='Navegación entre personajes'
+          content='Para navegar entre personajes, haz click en alguna de las cartas a la izquierda o derecha del personaje actual o arrastra la carta a la izquierda o derecha.'
+          dismissible
+          alertId='fighter-alert'
+        />
+      </div>
       <div className='flex flex-row justify-center items-center'>
         <FighterLink
           id={previousFighter}
@@ -82,51 +92,56 @@ const FighterCard: React.FC<FighterCardProps> = ({ fighter }) => {
           hoverTranslate='md:hover:-translate-y-10 md:hover:translate-x-10 lg:hover:translate-x-25'
         />
 
-        <article className='z-1 w-[280px] sm:w-[300px] md:w-[350px]'>
-          <Card shadow='md' rounded='lg' color='default'>
-            <CardContent textSize='sm'>
-              <div className='pb-2 flex flex-row items-center justify-start gap-x-12 w-full'>
-                <Radar />
-                <h2
-                  id='card-fighter-name'
-                  className='text-2xl font-bold text-center text-neutral-100'
-                >
-                  {fighter.name}
-                </h2>
-              </div>
-              <div
-                className={`flex items-center justify-center ${
-                  gradientBackground[fighter.race]
-                } backdrop-blur-lg p-2 rounded-lg`}
-              >
-                <img
-                  id='card-fighter-image'
-                  style={
-                    { viewTransitionName: 'fighter' } as React.CSSProperties
-                  }
-                  src={fighter.image}
-                  alt={fighter.name}
-                  className='h-80 object-cover transition-all duration-300 ease-in-out'
-                />
-              </div>
-              <div className='flex flex-row items-center justify-between gap-x-2 mt-4 text-neutral-100/80 bg-zinc-700/40 backdrop-blur-md rounded-md rounded-b-4xl  py-2 px-3 font-semibold min-h-16'>
-                <div className='flex flex-col gap-y-1 justify-center'>
-                  <h3 className='uppercase'>Ki:</h3>
-                  <span
-                    id='card-fighter-ki'
-                    className='text-xl text-pretty text-center'
+        <article className='z-1 w-[280px] sm:w-[300px] md:w-[350px] select-none'>
+          <SwipeEffect
+            leftPageUrl={`/fighters/${nextFighter}`}
+            rightPageUrl={`/fighters/${previousFighter}`}
+          >
+            <Card shadow='md' rounded='lg' color='default'>
+              <CardContent textSize='sm'>
+                <div className='pb-2 flex flex-row items-center justify-start gap-x-12 w-full'>
+                  <Radar />
+                  <h2
+                    id='card-fighter-name'
+                    className='text-2xl font-bold text-center text-neutral-100'
                   >
-                    {fighter.ki}
-                  </span>
+                    {fighter.name}
+                  </h2>
                 </div>
-                <div className='flex flex-col gap-y-1 justify-center items-start'>
-                  <span>Afiliación: {fighter.affiliation}</span>
-                  <span>Raza: {fighter.race}</span>
-                  <span>Género: {fighter.gender}</span>
+                <div
+                  className={`flex items-center justify-center ${
+                    gradientBackground[fighter.race]
+                  } backdrop-blur-lg p-2 rounded-lg`}
+                >
+                  <img
+                    id='card-fighter-image'
+                    style={
+                      { viewTransitionName: 'fighter' } as React.CSSProperties
+                    }
+                    src={fighter.image}
+                    alt={fighter.name}
+                    className='h-80 object-cover transition-all duration-300 ease-in-out pointer-events-none'
+                  />
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+                <div className='flex flex-row items-center justify-between gap-x-2 mt-4 text-neutral-100/80 bg-zinc-700/40 backdrop-blur-md rounded-md rounded-b-4xl  py-2 px-3 font-semibold min-h-16'>
+                  <div className='flex flex-col gap-y-1 justify-center'>
+                    <h3 className='uppercase'>Ki:</h3>
+                    <span
+                      id='card-fighter-ki'
+                      className='text-xl text-pretty text-center'
+                    >
+                      {fighter.ki}
+                    </span>
+                  </div>
+                  <div className='flex flex-col gap-y-1 justify-center items-start'>
+                    <span>Afiliación: {fighter.affiliation}</span>
+                    <span>Raza: {fighter.race}</span>
+                    <span>Género: {fighter.gender}</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </SwipeEffect>
         </article>
 
         <FighterLink
