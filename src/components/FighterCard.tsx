@@ -77,14 +77,6 @@ const FighterCard: React.FC<FighterCardProps> = ({ fighter }) => {
 
   return (
     <section className='flex flex-col justify-center items-center gap-4'>
-      <div className='max-w-3xl'>
-        <Alert
-          title='Navegación entre personajes'
-          content='Para navegar entre personajes, haz click en alguna de las cartas a la izquierda o derecha del personaje actual o arrastra la carta a la izquierda o derecha.'
-          dismissible
-          alertId='fighter-alert'
-        />
-      </div>
       <div className='flex flex-row justify-center items-center'>
         <FighterLink
           id={previousFighter}
@@ -191,6 +183,13 @@ const FighterCard: React.FC<FighterCardProps> = ({ fighter }) => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='max-w-3xl'>
+        <Alert
+          title='Navegación entre personajes'
+          content='Para navegar entre personajes, haz click en alguna de las cartas a la izquierda o derecha del personaje actual o arrastra la carta a la izquierda o derecha.'
+          alertId='fighter-alert'
+        />
       </div>
     </section>
   )

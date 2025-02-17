@@ -25,22 +25,10 @@ const Alert: FC<AlertProps> = ({
   title,
   content,
   icon = true,
-  dismissible = false,
-  alertId = 'global-alert' // Valor por defecto
+  dismissible = false
 }) => {
   // Cargar estado inicial desde localStorage
-  const [visible, setVisible] = useState(() => {
-    if (typeof window === 'undefined') return true // Para SSR
-    const savedState = localStorage.getItem(`alert-${alertId}`)
-    return savedState !== 'dismissed'
-  })
-
-  // Efecto para persistir el estado
-  useEffect(() => {
-    if (!visible && dismissible) {
-      localStorage.setItem(`alert-${alertId}`, 'dismissed')
-    }
-  }, [visible, dismissible, alertId])
+  const [visible, setVisible] = useState(true)
 
   if (!visible) return null
 
