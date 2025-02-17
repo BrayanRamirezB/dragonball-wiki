@@ -1,4 +1,4 @@
-import { useState, useRef, type CSSProperties } from 'react'
+import { useEffect, useState, type CSSProperties } from 'react'
 
 interface SwipeCardProps {
   leftPageUrl?: string
@@ -11,11 +11,16 @@ const SwipeEffect = ({
   rightPageUrl,
   children
 }: SwipeCardProps) => {
+  const [isHydrated, setIsHydrated] = useState(false)
   const [startX, setStartX] = useState(0)
   const [currentPosition, setCurrentPosition] = useState(0)
   const [isDragging, setIsDragging] = useState(false)
   const [isExiting, setIsExiting] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
+
+  // Esperar a la hidratación
+  useEffect(() => {
+    setIsHydrated(true)
+  }, [])
 
   const MAX_ROTATION = 45
   const SWIPE_THRESHOLD = 180
@@ -27,15 +32,18 @@ const SwipeEffect = ({
   }
 
   const handleMove = (clientX: number) => {
+    if (!isHydrated) return
     const delta = clientX - startX
     setCurrentPosition(delta)
   }
 
   const handleSwipeAction = (direction: 'left' | 'right') => {
+    if (!isHydrated) return
+
     setIsExiting(true)
-    setCurrentPosition(
+    const exitPosition =
       direction === 'right' ? window.innerWidth : -window.innerWidth
-    )
+    setCurrentPosition(exitPosition)
 
     setTimeout(() => {
       if (direction === 'right' && rightPageUrl) {
@@ -47,6 +55,8 @@ const SwipeEffect = ({
   }
 
   const handleEnd = () => {
+    if (!isHydrated) return
+
     if (Math.abs(currentPosition) > SWIPE_THRESHOLD) {
       handleSwipeAction(currentPosition > 0 ? 'right' : 'left')
     } else {
@@ -56,6 +66,8 @@ const SwipeEffect = ({
   }
 
   const getCardStyle = (): CSSProperties => {
+    if (!isHydrated) return { opacity: 0 }
+
     const rotation = (currentPosition / window.innerWidth) * MAX_ROTATION
     const opacity = 1 - Math.abs(currentPosition) / window.innerWidth
     const scale = 1 - Math.abs(currentPosition) / 2000
@@ -66,14 +78,12 @@ const SwipeEffect = ({
                   scale(${scale})`,
       opacity: isExiting ? 0 : opacity,
       transition: isDragging ? 'none' : `all ${ANIMATION_DURATION}ms ease-out`,
-      cursor: isDragging ? 'grabbing' : 'grab',
-      touchAction: 'none'
+      cursor: isDragging ? 'grabbing' : 'grab'
     }
   }
 
   return (
     <div
-      ref={containerRef}
       className='w-full h-full select-none'
       onTouchStart={(e) => {
         handleStart(e.touches[0].clientX)
