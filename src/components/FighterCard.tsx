@@ -67,11 +67,13 @@ const FighterCard: React.FC<FighterCardProps> = ({ fighter }) => {
 
   const renderPlanetSection = () => (
     <div className='grid grid-rows-1 md:grid-cols-[1fr_1fr] gap-2'>
-      <div className={`${COMMON_CARD_STYLES} order-2 md:order-none`}>
+      <div
+        className={`${COMMON_CARD_STYLES} order-2 md:order-none flex items-center justify-center`}
+      >
         <img
           src={fighter.originPlanet.image}
           alt={fighter.originPlanet.name}
-          className='h-60 object-cover rounded-full overflow-hidden'
+          className='h-60 w-60 object-cover rounded-full overflow-hidden'
         />
       </div>
       <div className='order-1 md:order-none grid grid-rows-[1fr_4fr] gap-y-2'>
